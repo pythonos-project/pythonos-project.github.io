@@ -27,6 +27,13 @@ Digitate nel terminale nel Desktop:
 
 </div>
 
+
+
+
+
+
+
+
 Cosi abbiamo installato PythonOS nel Dekstop e abbiamo installato le dipendenze.
 
 ---
@@ -34,6 +41,8 @@ Cosi abbiamo installato PythonOS nel Dekstop e abbiamo installato le dipendenze.
 ## Avvio
 
 Digita:
+
+
 
 <div class="terminal">
 
@@ -51,6 +60,15 @@ Digita:
 &gt; python main.py<br>
 
 </div>
+
+
+
+
+
+
+
+
+
 
 Vedrai una lockscreen con un PIN.
 Il PIN predefinito è **1234**.
