@@ -1,8 +1,8 @@
-Guida introduttiva a PythonOS
+# Guida introduttiva a PythonOS
 
 ---
 
-Installazione
+## Installazione
 
 Digitate nel terminale del Desktop:
 
@@ -21,7 +21,7 @@ Digitate nel terminale del Desktop:
 
 ---
 
-Avvio
+## Avvio
 
 Digita:
 
@@ -39,6 +39,6 @@ Dopo averlo inserito vedrai l'interfaccia di PythonOS.
 
 ---
 
-Congratulazioni!
+## Congratulazioni!
 
 Hai appena installato e avviato PythonOS 🎉
