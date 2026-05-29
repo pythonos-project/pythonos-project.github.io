@@ -11,9 +11,9 @@
 
   <div class="terminal-body">
 
- > Comando 1<br>
- > Comando 2<br>
- > Comando 3<br>
+ &gt; Comando 1<br>
+ &gt; Comando 2<br>
+ &gt; Comando 3<br>
  <em> # Nota</em><br>
 
 </div>

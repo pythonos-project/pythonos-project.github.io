@@ -19,11 +19,11 @@ Digitate nel terminale nel Desktop:
 
   <div class="terminal-body">
 
- > git clone https://github.com/pythonos-project/pythonos.git<br>
- > python -m venv venv<br>
- > source venv/bin/activate<br>
+ &gt; git clone https://github.com/pythonos-project/pythonos.git<br>
+ &gt; python -m venv venv<br>
+ &gt; source venv/bin/activate<br>
  <em> #Su Windows: venv\Scripts\activate, PowerShell: venv\Scripts\Activate</em><br>
- > pip install -r requirements.txt<br>
+ &gt; pip install -r requirements.txt<br>
 
 </div>
 
