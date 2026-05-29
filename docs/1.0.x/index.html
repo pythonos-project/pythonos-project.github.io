@@ -374,13 +374,18 @@ hamburger.addEventListener("click", () => {
 
 });
 
-let file = getQueryElement("file")
+const params = new URLSearchParams(window.location.search);
+let file = params.get("file");
+
+if(file){
 
   fetch(file)
   .then(response => response.text())
   .then(text => {
     document.getElementById("mdc").innerHTML = marked.parse(text);
   });
+
+}
 
 </script>
 
