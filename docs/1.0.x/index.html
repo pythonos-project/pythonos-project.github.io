@@ -451,6 +451,14 @@ if(file){
     document.getElementById("mdc").innerHTML = marked.parse(text);
   });
 
+} else {
+
+  fetch("md/index.md")
+  .then(response => response.text())
+  .then(text => {
+    document.getElementById("mdc").innerHTML = marked.parse(text);
+  });
+  
 }
 
 </script>
