@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Download History - PythonOS</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    background:rgba(15,23,42,0.8);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#4ade80;
+}
+
+/* LINKS */
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#4ade80;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+    display:none;
+    font-size:34px;
+    cursor:pointer;
+    user-select:none;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 8%;
+
+    background:
+    radial-gradient(circle at top left,#1e293b,#0f172a 60%);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:80px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#4ade80;
+}
+
+.hero p{
+    font-size:22px;
+    color:#cbd5e1;
+    margin-bottom:40px;
+}
+
+/* BUTTONS */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 30px;
+    border-radius:12px;
+
+    text-decoration:none;
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#4ade80;
+    color:#0f172a;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(74,222,128,0.4);
+}
+
+.btn-secondary{
+    border:2px solid #334155;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:#1e293b;
+}
+
+/* FEATURES */
+
+.features{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    background:#243247;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#4ade80;
+}
+
+
+
+/* FOOTER */
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .hamburger{
+        display:block;
+    }
+
+    nav ul{
+
+        position:absolute;
+
+        top:80px;
+        right:8%;
+
+        width:220px;
+
+        background:#1e293b;
+
+        flex-direction:column;
+
+        padding:20px;
+
+        border-radius:16px;
+
+        display:none;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+}
+
+.btn-ot{
+    color:#4ade80;
+}
+
+  #mdc{
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+}
+
+/* MARKDOWN */
+
+#mdc h1,
+#mdc h2,
+#mdc h3,
+#mdc h4{
+    margin-top:40px;
+    margin-bottom:20px;
+    color:#4ade80;
+}
+
+
+  #mdc a{
+    color:#4ade80;
+  }
+#mdc p{
+    margin-bottom:20px;
+    line-height:1.8;
+    color:#cbd5e1;
+}
+
+#mdc ul,
+#mdc ol{
+    margin-left:25px;
+    margin-bottom:20px;
+}
+
+#mdc code{
+    background:#111827;
+    padding:3px 8px;
+    border-radius:6px;
+    color:#4ade80;
+}
+
+#mdc pre{
+    background:#020617;
+    padding:20px;
+    border-radius:16px;
+    overflow-x:auto;
+    margin-bottom:20px;
+}
+
+#mdc img{
+    max-width:100%;
+    border-radius:16px;
+}
+
+#mdc table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:20px;
+}
+
+#mdc th,
+#mdc td{
+    border:1px solid #334155;
+    padding:12px;
+}
+
+/* TERMINAL FIX */
+
+/* TERMINAL SOLO MARKDOWN */
+
+#mdc .terminal{
+    width:100%;
+    max-width:900px;
+    margin:40px auto;
+
+    background:#020617;
+    border-radius:20px;
+    overflow:hidden;
+
+    border:1px solid #1e293b;
+}
+
+#mdc .terminal-top{
+    background:#111827;
+    padding:12px;
+    display:flex;
+    gap:8px;
+}
+
+#mdc .dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    flex-shrink:0;
+}
+
+#mdc .red{ background:#ef4444; }
+#mdc .yellow{ background:#facc15; }
+#mdc .green{ background:#22c55e; }
+
+#mdc .terminal-body{
+    padding:30px;
+    font-family:monospace;
+    color:#4ade80;
+    line-height:2;
+
+    overflow-x:auto;
+    white-space:pre-wrap;
+    word-break:break-word;
+}
+  #mdc{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">PythonOS</div>
+
+    <div class="hamburger" id="hamburger">
+        ☰
+    </div>
+
+    <ul id="nav-links">
+        <li><a href="https://pythonos-project.github.io/" target="_blank">Home</a></li>
+        <li><a href="https://pythonos-project.github.io/docs/" target="_blank">Docs</a></li>
+        <li><a href="https://pythonos-project.github.io/download" target="_blank">Download</a></li>
+        <li><a href="https://github.com/pythonos-project/pythonos" target="_blank">GitHub</a></li>
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Il sistema operativo fatto in
+            <span>Python</span>
+        </h1>
+
+        <p>
+            PythonOS è un mini sistema operativo creato in Python,
+            moderno, veloce e open source.
+        </p>
+
+        <div class="buttons">
+
+            <a href="https://pythonos-project.github.io/download" target="_blank" class="btn btn-primary">
+                Scarica ora
+            </a>
+
+            <a href="https://pythonos-project.github.io/docs/" target="_blank" class="btn btn-secondary">
+                Documentazione
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features" id="mdc">
+
+
+
+</section>
+<!-- FOOTER -->
+
+<footer>
+    © 2026 PythonOS — Made with Python 🐍
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+  fetch("H.md")
+  .then(response => response.text())
+  .then(text => {
+    document.getElementById("mdc").innerHTML = marked.parse(text);
+  
+
+
+</script>
+
+</body>
+</html>
